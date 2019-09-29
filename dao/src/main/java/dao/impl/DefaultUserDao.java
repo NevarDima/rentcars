@@ -1,8 +1,12 @@
 package dao.impl;
 
+import app.entities.User;
 import dao.UserDao;
 
-public class DafaultUserDao implements UserDao {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DefaultUserDao implements UserDao {
     private static volatile UserDao instance;
 
     public DefaultUserDao() {
@@ -25,13 +29,15 @@ public class DafaultUserDao implements UserDao {
     private List<User> users;
 
     @Override
-    public List<User> getStudents() {
+    public List<User> getUsers() {
         return users;
     }
 
     @Override
     public String save(User user) {
         users.add(user);
-        return user.getId();
+        return String.valueOf(user.hashCode());
     }
+
+
 }

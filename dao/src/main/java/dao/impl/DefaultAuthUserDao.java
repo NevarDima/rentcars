@@ -1,9 +1,11 @@
 package dao.impl;
 
+import app.entities.AuthUser;
+import app.entities.Role;
 import dao.AuthUserDao;
 
-import javax.management.relation.Role;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DefaultAuthUserDao implements AuthUserDao {
     Map<String, AuthUser> userByLogin;
